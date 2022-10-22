@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--// 1 USD = 23,000 VND-->
+<body>
+<table width=70%>
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+    </tr>
+    <tr>
+        <th> <input type="text" id="amount"> </th>
+        <th>
+            <select id="sl1">
+                <option value="VN">VIETNAM</option>
+                <option value="USD">USD</option>
+            </select>
+        </th>
+        <th>
+            <select id="sl2">
+                <option value="USD">USD</option>
+                <option value="VN">VIETNAM</option>
+            </select>
+        </th>
+        <th><button type="button" style="background: blueviolet" onclick="ChuyenDoi()">Convert</button> </th>
+    </tr>
+    <tr>
+        <td style="color: blue">Result: <span id="result"></span></td>
+    </tr>
+</table>
+
+</body>
+
+<script>
+let amount = document.getElementById("amount");
+let sl1 = document.getElementById("sl1");
+let sl2 = document.getElementById("sl2");
+let result = document.getElementById("result");
+
+function ChuyenDoi() {
+    if (sl1.value === "USD" && sl2.value === "VN")
+    {
+        result.innerHTML = (amount.value * 23000) + " VND";
+    }
+    else if(sl1.value === "VN" && sl2.value === "USD")
+    {
+        result.innerHTML = (amount.value / 23000) + " $";
+    }
+}
+
+</script>
+
+</html>
+
